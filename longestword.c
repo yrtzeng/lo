@@ -4,10 +4,12 @@ int main(void)
 {
 	static int *start, *maxstart, *maxend, maxlen, len, d;
 	int c;
+
 	if ((c = getchar()) != EOF)
 	{
-		  if (len == 0)
+		  if (len == 0) {
 			  start = &c;
+		  }
 
 		  if (c == '\n')
 		  {
@@ -19,8 +21,9 @@ int main(void)
 			  }
 			  len = 0;
 		  }
-		  else
+		  else {
 			  ++len;
+		  }
 		  main();
 	}
 	if (len > maxlen)
@@ -35,6 +38,7 @@ int main(void)
 	        for (start = maxstart; start != maxend; start = (void *)start-d)
 		putchar(*start);
 	}
+
 	puts("");
 	exit(0);
 }
